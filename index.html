@@ -1,88 +1,502 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Domaiin reserviert</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Domain reserviert</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<style>
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --secondary: #f8fafc;
+    --surface: #ffffff;
+    --text: #1e293b;
+    --text-light: #64748b;
+    --shadow: 0 8px 24px rgba(0,0,0,0.08);
+    --radius: 18px;
+    --max-width: 1200px;
+}
 
-        html, body {
-            height: 100%;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            color: white;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        body {
-            background: linear-gradient(
-                135deg,
-                #ff7a18 0%,
-                #a445b2 50%,
-                #2b6cff 100%
-            );
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
+body {
+    font-family: Inter, Arial, sans-serif;
+    color: var(--text);
+    line-height: 1.6;
+}
 
-        main {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 2rem;
-        }
+.container {
+    width: min(90%, var(--max-width));
+    margin: auto;
+}
 
-        .content h1 {
-            font-size: clamp(2.5rem, 6vw, 5rem);
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
+section {
+    padding: 50px 0;
+}
 
-        .content p {
-            font-size: clamp(1.1rem, 2vw, 1.4rem);
-            opacity: 0.95;
-        }
+h1, h2, h3 {
+    line-height: 1.2;
+}
 
-        footer {
-            padding: 2rem;
-            background: rgba(0, 0, 0, 0.15);
-            backdrop-filter: blur(10px);
-            font-size: 0.9rem;
-            line-height: 1.6;
-        }
+h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 2.4rem;
+}
 
-        footer h2 {
-            margin-top: 1.5rem;
-            margin-bottom: 0.5rem;
-            font-size: 1rem;
-        }
+.section-description {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 60px;
+    color: var(--text-light);
+}
 
-        footer h2:first-child {
-            margin-top: 0;
-        }
+/* HERO */
 
-        footer a {
-            color: white;
-        }
-    </style>
+.hero {
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(
+            var(--primary),
+			var(--primary-dark)
+        );
+    color: white;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.15rem;
+    opacity: 0.95;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    background: white;
+    color: var(--primary);
+    padding: 14px 30px;
+    border-radius: 999px;
+    font-weight: 600;
+    box-shadow: var(--shadow);
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+.hero-card {
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(12px);
+    border-radius: var(--radius);
+    padding: 40px;
+}
+
+.hero-card h3 {
+    margin-bottom: 15px;
+}
+
+/* WHY US */
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+    gap: 25px;
+}
+
+.card {
+    background: var(--surface);
+    padding: 30px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.card-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 14px;
+    background: rgba(37,99,235,0.1);
+    margin-bottom: 20px;
+}
+
+/* SERVICES */
+
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+    gap: 25px;
+}
+
+/* PORTFOLIO */
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+    gap: 25px;
+}
+
+.project {
+    overflow: hidden;
+    border-radius: var(--radius);
+    background: white;
+    box-shadow: var(--shadow);
+}
+
+.project-image {
+    height: 220px;
+    background: linear-gradient(
+        var(--primary),
+        var(--primary),
+        var(--primary-dark)
+    );
+}
+
+.project-content {
+    padding: 25px;
+}
+
+/* PRICING */
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+    gap: 25px;
+}
+
+.price-card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+.price-card.featured {
+    border: 3px solid var(--primary);
+    transform: scale(1.03);
+}
+
+.price {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--primary);
+    margin: 20px 0;
+}
+
+.price-card ul {
+    list-style: none;
+    margin: 25px 0;
+}
+
+.price-card li {
+    padding: 8px 0;
+    color: var(--text-light);
+}
+
+/* FOOTER */
+
+footer {
+    background: var(--primary-dark);
+    color: white;
+    padding: 50px 0;
+    text-align: center;
+}
+
+footer p {
+    opacity: 0.8;
+}
+
+@media (max-width: 900px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 600px) {
+    h2 {
+        font-size: 2rem;
+    }
+
+    .hero h1 {
+        font-size: 2.4rem;
+    }
+}
+</style>
 </head>
 <body>
 
-    <main>
-        <div class="content">
-            <h1>Domaiin reserviert</h1>
-            <p>Diese Website befindet sich derzeit im Aufbau.</p>
-        </div>
-    </main>
+<!-- MAIN SECTION -->
+<section>
+<div class="container">
+	<h1>Domain reserviert. Diese Website befindet sich derzeit im Aufbau und enthält daher Platzhaltertexte. Es werden keine Dienstleistungen angeboten.</h1>
+</div>
+</section>
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <div>
+                <h1>Warum wir?</h1>
+                <p>
+                    Platzhaltertext für eine überzeugende Einleitung.
+                    Beschreiben Sie hier Ihre Agentur, Ihr Team oder Ihr
+                    Unternehmen und erklären Sie, warum Kunden mit Ihnen
+                    zusammenarbeiten sollten.
+                </p>
 
-    <footer>
+                <a href="#" class="btn">
+                    Mehr erfahren
+                </a>
+            </div>
+
+            <div class="hero-card">
+                <h3>Ihr Erfolg im Fokus</h3>
+                <p>
+                    Platzhalter für Kennzahlen, Referenzen,
+                    Kundenbewertungen oder besondere Vorteile.
+                </p>
+                <br>
+                <p>
+                    ✓ Platzhalter Vorteil 1<br>
+                    ✓ Platzhalter Vorteil 2<br>
+                    ✓ Platzhalter Vorteil 3
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- WHAT WE DO -->
+<section>
+    <div class="container">
+
+        <h2>Was wir machen</h2>
+
+        <p class="section-description">
+            Platzhaltertext für die Beschreibung Ihrer Leistungen.
+        </p>
+
+        <div class="services">
+
+            <div class="card">
+                <div class="card-icon"></div>
+                <h3>Leistung 01</h3>
+                <p>
+                    Beschreibung der ersten Dienstleistung
+                    als Platzhalter.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon"></div>
+                <h3>Leistung 02</h3>
+                <p>
+                    Beschreibung der zweiten Dienstleistung
+                    als Platzhalter.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon"></div>
+                <h3>Leistung 03</h3>
+                <p>
+                    Beschreibung der dritten Dienstleistung
+                    als Platzhalter.
+                </p>
+            </div>
+			
+			<div class="card">
+                <div class="card-icon"></div>
+                <h3>Leistung 04</h3>
+                <p>
+                    Beschreibung der vierten Dienstleistung
+                    als Platzhalter.
+                </p>
+            </div>
+			
+			<div class="card">
+                <div class="card-icon"></div>
+                <h3>Leistung 5</h3>
+                <p>
+                    Beschreibung der fünften Dienstleistung
+                    als Platzhalter.
+                </p>
+            </div>
+			
+			<div class="card">
+                <div class="card-icon"></div>
+                <h3>Leistung 06</h3>
+                <p>
+                    Beschreibung der sechsten Dienstleistung
+                    als Platzhalter.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section>
+    <div class="container">
+
+        <h2>Portfolio Galerie</h2>
+
+        <p class="section-description">
+            Beispielprojekte und Referenzen.
+        </p>
+
+        <div class="gallery">
+
+            <div class="project">
+                <div class="project-image"></div>
+                <div class="project-content">
+                    <h3>Projekt Alpha</h3>
+                    <p>Kurze Projektbeschreibung.</p>
+                </div>
+            </div>
+
+            <div class="project">
+                <div class="project-image"></div>
+                <div class="project-content">
+                    <h3>Projekt Beta</h3>
+                    <p>Kurze Projektbeschreibung.</p>
+                </div>
+            </div>
+
+            <div class="project">
+                <div class="project-image"></div>
+                <div class="project-content">
+                    <h3>Projekt Gamma</h3>
+                    <p>Kurze Projektbeschreibung.</p>
+                </div>
+            </div>
+
+            <div class="project">
+                <div class="project-image"></div>
+                <div class="project-content">
+                    <h3>Projekt Delta</h3>
+                    <p>Kurze Projektbeschreibung.</p>
+                </div>
+            </div>
+
+            <div class="project">
+                <div class="project-image"></div>
+                <div class="project-content">
+                    <h3>Projekt Epsilon</h3>
+                    <p>Kurze Projektbeschreibung.</p>
+                </div>
+            </div>
+
+            <div class="project">
+                <div class="project-image"></div>
+                <div class="project-content">
+                    <h3>Projekt Zeta</h3>
+                    <p>Kurze Projektbeschreibung.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- PRICING -->
+
+<section>
+<div class="container">
+	<h1>Domain reserviert. Diese Website befindet sich derzeit im Aufbau und enthält daher Platzhaltertexte. Es werden keine Dienstleistungen angeboten.</h1>
+</div>
+</section>
+
+<section>
+    <div class="container">
+
+        <h2>Preise</h2>
+
+        <p class="section-description">
+            Transparente Preisübersicht als Platzhalter.
+        </p>
+
+        <div class="pricing-grid">
+
+            <div class="price-card">
+                <h3>Stundensatz</h3>
+                <div class="price">XXX €</div>
+
+                <ul>
+                    <li>Transparent</li>
+                    <li>Unkompliziert</li>
+                    <li>Fair</li>
+                </ul>
+
+                <a href="#" class="btn">Anfragen</a>
+            </div>
+
+            <div class="price-card featured">
+                <h3>Anfahrt</h3>
+                <div class="price">ab 0 €</div>
+
+                <ul>
+                    <li>Kostenfrei im Münchener Zentrum</li>
+                    <li>Nach Vereinbarung: ab XX Euro in München (Nicht-Zentrum)</li>
+                    <li>Nach Vereinbarung: Ab XXX Euro außerhalb von München</li>
+                </ul>
+
+                <a href="#" class="btn">Anfragen</a>
+            </div>
+
+            <div class="price-card">
+                <h3>Optionale Leistungen</h3>
+                <div class="price">Nach Vereinbarung</div>
+
+                <ul>
+                    <li>Nachbearbeitung bei Bedarf, auch nachträglich buchbar. Für ausgewählte Bilder X € pro Bild oder als Flatrate für alle brauchbaren Bilder ab XXX €</li>
+                    <li>Weitere Dienstleistungen</li>
+                </ul>
+
+                <a href="#" class="btn">Anfragen</a>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section>
+<div class="container">
+	<h1>Domain reserviert. Diese Website befindet sich derzeit im Aufbau und enthält daher Platzhaltertexte. Es werden keine Dienstleistungen angeboten.</h1>
+</div>
+</section>
+
+<footer>
+<div class="container">
+    <div class="hero-content">
+	<div>
         <h2>Impressum</h2>
 
         <p>
@@ -91,11 +505,13 @@
             80337 München<br>
             Deutschland
         </p>
-
-        <p>
+		
+		<p>
             E-Mail: hallo@owais.de
         </p>
-
+		
+	</div>
+	<div>
         <h2>Datenschutzerklärung</h2>
 
         <p>
@@ -120,7 +536,13 @@
         <p>
             Wenn Sie uns per E-Mail kontaktieren, werden die von Ihnen übermittelten Daten (z. B. E-Mail-Adresse, Inhalt der Nachricht) zum Zweck der Bearbeitung Ihrer Anfrage verarbeitet und auf Servern der Zoho Corporation gespeichert. Eine Weitergabe der Daten erfolgt nicht ohne Ihre Einwilligung. Die Daten werden gelöscht, sobald sie für die Bearbeitung nicht mehr erforderlich sind, sofern keine gesetzlichen Aufbewahrungspflichten bestehen.
         </p>
-    </footer>
+        <p>
+            © 2026 Alle Rechte vorbehalten.
+        </p>
+    </div>
+	</div>
+</div>
+</footer>
 
 </body>
 </html>
